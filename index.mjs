@@ -1,6 +1,7 @@
 import express from 'express'
 import  Auth_routes from './routes/Auth_routes.js'
 import  Book_routes from './routes/book_routes.js'
+import Location_routes from './routes/location_routes.js'
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
@@ -26,7 +27,7 @@ app.use(cors());
 // here we have to connect database 
 
 app.use(express.json());
-// app.use(cookieParser());
+app.use(cookieParser());
 // Define routes
 
 app.get('/', (req, res) => {
@@ -36,9 +37,11 @@ app.get('/', (req, res) => {
 
 app.use('/api/auth', Auth_routes);
 app.use('/api/books',Book_routes);
+app.use('/api/locations', Location_routes);
+
 
 // Start the server
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

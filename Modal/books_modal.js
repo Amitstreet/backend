@@ -6,7 +6,9 @@ const BookSchema = new mongoose.Schema({
     url: { type: String, required: true },
     catogery: { type: String, required: true },
     description: { type: String },
-});
+    
+},  { timestamps: true }
+);
 
 
 const book = mongoose.model('book',BookSchema);
