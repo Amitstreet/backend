@@ -11,6 +11,7 @@
   "scripts": {
 
     "start": "node index.js"
+
   },
 
   "keywords": [],
@@ -29,7 +30,9 @@
 
     "express": "^4.19.2",
 
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+
+    "mongoose": "^8.4.0"
 
   }
 
