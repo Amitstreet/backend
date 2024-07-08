@@ -1,7 +1,7 @@
 import twilio from 'twilio'
-const accountSid = 'AC8dd48cdd254b3adf8d95da8b11a469d7';
-const authToken = 'e198c3317ad54d29e7d8dfc37a360388';
-const twilioPhoneNumber = '+14056453885';
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
 
 const client = new twilio(accountSid, authToken);
 function generateOtp() {
