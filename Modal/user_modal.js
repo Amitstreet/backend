@@ -14,9 +14,24 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
+      // Make password optional for OAuth users
+      required: function() {
+        return !this.googleId; // Password is required only if googleId is not present
+      },
     },
-    
+    googleId: {
+      type: String,
+      unique: true,
+      sparse: true, // Allows multiple documents without this field
+    },
+    MobileNumber:{
+      type: String,
+      sparse: true, 
+    }
+    ,location:{
+      type:String,
+      sparse:true,
+    }
   },
   { timestamps: true }
 );
