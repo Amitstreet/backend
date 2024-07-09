@@ -33,10 +33,7 @@ app.use(cookieParser());
 
 
 
-const corsOptions = {
-  origin: 'https://books-swap.vercel.app/',
-  credentials: true,
-};
+
 
 app.use(cors(corsOptions));
 // Define routes
